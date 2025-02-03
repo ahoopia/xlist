@@ -31,7 +31,10 @@ jobs:
 
       # Install dependencies
       - name: Install dependencies
-        run: flutter pub get
+        run: |
+         gradle clean
+         flutter clean        
+         flutter pub get
 
       # Build APK (Release version)
       - name: Build APK
