@@ -32,7 +32,6 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: |
-         gradle clean
          flutter clean        
          flutter pub get
 
