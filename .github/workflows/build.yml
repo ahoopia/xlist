@@ -39,7 +39,13 @@ jobs:
 
       # Build APK (Release version)
       - name: Build APK
-        run: flutter build apk --release 
+        run: |
+         flutter pub upgrade
+         flutter doctor --android-licenses
+         cd android
+         ./gradlew wrapper --gradle-version 7.6 --distribution-type bin
+         cd ..
+         flutter build apk --release
 
       # List output APK files
       - name: List APK Files
